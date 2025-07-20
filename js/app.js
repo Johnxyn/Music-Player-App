@@ -157,6 +157,12 @@ const highlightCurrentSong = () => {
   }
 }
 
+const setPlayButtonAccessibleText = () => {
+  const song = userData?.currentSong || userData?.songs[0];
+
+  playButton.setAttribute("aria-label", song?.title ? `Play ${song.title}` : "Play");
+}
+
 const setPlayerDisplay = () => {
   const playingSong = document.getElementById("player-song-title");
   const songArtist = document.getElementById("player-song-artist");
